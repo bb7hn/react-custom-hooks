@@ -1,0 +1,33 @@
+{
+  "name": "react-custom-hooks",
+  "version": "0.1.0",
+  "description": "predefined custom react hooks",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "npx jest",
+    "clean":"echo y|del \"./dist\"",
+    "compile":"npx tsc",
+    "build": "npm run clean && npm run compile && echo - && echo Compiled successfully && echo - && echo Now you can run npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bb7hn/react-custom-hooks.git"
+  },
+  "keywords": [
+    "react",
+    "custom",
+    "hooks"
+  ],
+  "author": "Batuhan Ozen",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bb7hn/react-custom-hooks/issues"
+  },
+  "homepage": "https://github.com/bb7hn/react-custom-hooks#readme",
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "typescript": "^5.2.2"
+  }
+}
