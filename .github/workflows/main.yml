@@ -16,8 +16,13 @@ jobs:
       - name: Install dependencies
         run: npm install
     
-      - name: Discard changes in package-lock.json
+      - name: Restore git history
         run: git restore package-lock.json
+        
+      - name: Set git config
+        run: |
+            git config --global user.name "Batuhan Ozen"
+            git config --global user.email "iletisim@batuhanozen.com"
         
       - name: Bump version and publish
         run: |
