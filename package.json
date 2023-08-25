@@ -1,5 +1,5 @@
 {
-  "name": "react-custom-hooks",
+  "name": "r-custom-hooks",
   "version": "0.1.0",
   "description": "predefined custom react hooks",
   "main": "dist/index.js",
