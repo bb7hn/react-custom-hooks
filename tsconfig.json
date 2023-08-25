@@ -3,12 +3,13 @@
     "target": "ESNext",
     "module": "CommonJS",
     "outDir": "./dist",
-    "rootDir": "./src",
     "strict": true,
     "jsx": "react",
     "esModuleInterop": true,
     "declaration": true,
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types"]
-  }
+  },
+  "include": ["src/**/*"],
+  "exclude": ["__tests__/**/*"]
 }

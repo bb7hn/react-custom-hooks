@@ -6,9 +6,11 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "test": "npx jest",
-    "clean":"echo y|del \"./dist\"",
-    "compile":"npx tsc",
-    "build": "npm run clean && npm run compile && echo - && echo Compiled successfully && echo - && echo Now you can run npm publish"
+    "clean": "rm -rf ./dist",
+    "clean-win": "echo y|del \"./dist\"",
+    "compile": "npx tsc",
+    "build": "npm run clean && npm run test && npm run compile && npm version patch && echo - && echo Compiled successfully && echo - && echo Now you can run npm publish",
+    "build-win": "npm run clean-win && npm run test && npm run compile && npm version patch && echo - && echo Compiled successfully && echo - && echo Now you can run npm publish"
   },
   "repository": {
     "type": "git",
@@ -26,8 +28,15 @@
   },
   "homepage": "https://github.com/bb7hn/react-custom-hooks#readme",
   "devDependencies": {
+    "@types/jest": "^29.5.4",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
+    "jest": "^29.6.4",
+    "jest-environment-jsdom": "^29.6.4",
+    "ts-jest": "^29.1.1",
     "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@testing-library/react": "^14.0.0"
   }
 }
