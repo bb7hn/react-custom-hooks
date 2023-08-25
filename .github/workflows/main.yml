@@ -18,7 +18,7 @@ jobs:
         
       - name: Bump version and publish
         run: |
-          npm version patch
-          npm publish
+            npm run build
+            npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
