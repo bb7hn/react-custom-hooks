@@ -10,7 +10,7 @@ test('should return initial value', () => {
   rerender('ok2')
   setTimeout(() => {
     expect(result.current).toBe('ok1');  
-  }, 400);
+  }, 500);
 });
 
 // Add more test cases as needed
