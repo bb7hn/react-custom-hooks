@@ -9,7 +9,7 @@
     "clean": "rm -rf ./dist",
     "clean-win": "echo y|del \"./dist\"",
     "compile": "npx tsc",
-    "build": "npm run clean && npm run test && npm run compile && npm version patch && echo ___Compiled successfully___",
+    "build": "npm run clean && npm run test && git stash && npm run compile && npm version patch && echo ___Compiled successfully___",
     "build-win": "npm run clean-win && npm run test && npm run compile && echo ___Compiled successfully___"
   },
   "repository": {
