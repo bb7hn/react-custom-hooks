@@ -1,6 +1,6 @@
 {
   "name": "r-custom-hooks",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "predefined custom react hooks",
   "files": [
     "dist/**"
@@ -12,7 +12,6 @@
     "clean": "rm -rf ./dist",
     "clean-win": "echo y|del \"./dist\"",
     "compile": "npx tsc",
-    "build": "npm run clean && npm run test && npm run compile && npm version patch && echo ___Compiled successfully___",
     "build": "npm run clean && npm run test && npm run compile && npm version patch && echo ___Compiled successfully___",
     "build-win": "npm run clean-win && npm run test && npm run compile && echo ___Compiled successfully___"
   },
