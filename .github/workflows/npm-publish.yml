@@ -21,7 +21,9 @@ jobs:
       - run: git config --global user.email "iletisim@batuhanozen.com"
       - run: git config --global user.name "Batuhan Ozen"
       - run: npm run build
+      - run: cd dist
       - run: ls -a
+      - run: cd ..
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

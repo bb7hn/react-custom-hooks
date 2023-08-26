@@ -15,10 +15,11 @@
     "clean-tests": "rm -rf ./dist/__tests__",
     "clean-clean-tests-win": "echo y|del \"./dist/__tests__\"",
     "compile": "npx tsc",
-    "build": "npm run clean && npm run test && npm run compile && npm run clean-tests && npm version patch && echo ___Compiled successfully___",
-    "build-local": "npm run clean && npm run test && npm run compile && npm run clean-tests && echo ___Compiled successfully___",
-    "build-win": "npm run clean-win && npm run test && npm run compile && npm run clean-tests-win && npm version patch && echo ___Compiled successfully___",
-    "build-win-local": "npm run clean-win && npm run test && npm run compile && npm run clean-tests-win && echo ___Compiled successfully___"
+    "prepare":"npm version patch",
+    "build": "npm run clean && npm run test && npm run compile && npm run clean-tests && echo ___Compiled successfully___",
+    "build-test": "npm run clean && npm run test && npm run compile && npm run clean-tests && echo ___Compiled successfully___",
+    "build-win": "npm run clean-win && npm run test && npm run compile && npm run clean-tests-win && echo ___Compiled successfully___",
+    "build-win-test": "npm run clean-win && npm run test && npm run compile && npm run clean-tests-win && echo ___Compiled successfully___"
   },
   "repository": {
     "type": "git",
