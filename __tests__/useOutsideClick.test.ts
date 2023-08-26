@@ -1,29 +1,30 @@
-import { renderHook,act } from "@testing-library/react";
-import useOutsideClick from '../src/useOutsideClick'
-describe('Test useOutsideClick',()=>{
-    it('should call callback',()=>{
-        const callback = jest.fn()
-        const ref = {current:document.createElement('div')};
-        const {unmount} = renderHook(()=>useOutsideClick(ref,callback))
+import { renderHook, act } from '@testing-library/react';
+import { useOutsideClick } from '../src/useOutsideClick';
 
-        act(()=>{
-            document.body.click()
-        });
+describe('Test useOutsideClick', () => {
+  it('should call callback', () => {
+    const callback = jest.fn();
+    const ref = { current: document.createElement('div') };
+    const { unmount } = renderHook(() => useOutsideClick(ref, callback));
 
-        expect(callback).toHaveBeenCalled()
-        unmount();
-    })
+    act(() => {
+      document.body.click();
+    });
 
-    it('should not call callback',()=>{
-        const callback = jest.fn()
-        const ref = {current:document.createElement('div')};
-        const {unmount} = renderHook(()=>useOutsideClick(ref,callback))
+    expect(callback).toHaveBeenCalled();
+    unmount();
+  });
 
-        act(()=>{
-            ref.current.click()
-        });
+  it('should not call callback', () => {
+    const callback = jest.fn();
+    const ref = { current: document.createElement('div') };
+    const { unmount } = renderHook(() => useOutsideClick(ref, callback));
 
-        expect(callback).not.toHaveBeenCalled()
-        unmount();
-    })
-})
+    act(() => {
+      ref.current.click();
+    });
+
+    expect(callback).not.toHaveBeenCalled();
+    unmount();
+  });
+});

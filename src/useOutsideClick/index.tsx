@@ -2,15 +2,18 @@ import { useEffect, RefObject, useCallback } from 'react';
 
 export default function useOutsideClick(ref: RefObject<HTMLElement>, callback: () => void) {
   const handleClickOutside = useCallback((event: MouseEvent) => {
-    if (!ref.current || ref.current !== event.target && !ref.current.contains(event.target as Node)) {
-        callback();
+    if (
+      !ref.current
+      || (ref.current !== event.target && !ref.current.contains(event.target as Node))
+    ) {
+      callback();
     }
-  },[callback, ref]);
+  }, [callback, ref]);
 
   useEffect(() => {
     window.addEventListener('click', handleClickOutside);
     return () => {
-        window.removeEventListener('click', handleClickOutside);
+      window.removeEventListener('click', handleClickOutside);
     };
   }, [handleClickOutside, ref]);
 
@@ -19,4 +22,4 @@ export default function useOutsideClick(ref: RefObject<HTMLElement>, callback: (
   };
 }
 
-export {useOutsideClick}
+export { useOutsideClick };
