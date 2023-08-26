@@ -2,7 +2,7 @@
 
 This package contains predefined ready to use custom `React hooks`
 
-[![npm version](https://badge.fury.io/js/r-custom-hooks.svg)](https://www.npmjs.com/package/r-custom-hooks) ![license](https://img.shields.io/github/license/bb7hn/react-custom-hooks.svg) ![coverage](https://app.codecov.io/github/bb7hn/react-custom-hooks?branch=master)
+[![npm version](https://badge.fury.io/js/r-custom-hooks.svg)](https://www.npmjs.com/package/r-custom-hooks) ![license](https://img.shields.io/github/license/bb7hn/react-custom-hooks.svg) [![coverage](https://codecov.io/github/bb7hn/react-custom-hooks/graph/badge.svg?token=MQMFW6N80S)](https://codecov.io/github/bb7hn/react-custom-hooks)
 
 ![publish workflow](https://github.com/bb7hn/react-custom-hooks/actions/workflows/npm-publish.yml/badge.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/bb7hn/react-custom-hooks/badge.svg)](https://snyk.io/test/github/bb7hn/react-custom-hooks)
