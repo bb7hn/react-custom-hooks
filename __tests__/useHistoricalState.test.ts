@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import { useHistoricalState } from '../src/useHistoricalState';
+import { useHistoricalState } from '../hooks/useHistoricalState';
 
 describe('useHistoricalState', () => {
   it('should set initial value correctly', () => {
