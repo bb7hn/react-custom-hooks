@@ -1,6 +1,6 @@
 {
   "name": "r-custom-hooks",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "predefined custom react hooks",
   "files": [
     "dist/**"
