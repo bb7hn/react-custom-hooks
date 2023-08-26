@@ -61,4 +61,41 @@ describe('useHistoricalState', () => {
 
     expect(result.current[0]).toBe('2'); // This should be 'initialValue'
   });
+
+  it('should return initial state', () => {
+    const { result } = renderHook(() => useHistoricalState('0'));
+    act(() => {
+      result.current[1]('1');
+      result.current[1]('2');
+      result.current[1]('3');
+      result.current[2].previous();
+      result.current[2].previous();
+      result.current[2].previous();
+      result.current[2].previous();
+      result.current[2].previous();
+      result.current[2].previous();
+      result.current[2].previous();
+      result.current[2].previous();
+      result.current[2].previous();
+      result.current[2].previous();
+    });
+    expect(result.current[0]).toBe('0');
+  });
+
+  it('should return latest state in the history', () => {
+    const { result } = renderHook(() => useHistoricalState('0'));
+    act(() => {
+      result.current[1]('1');
+      result.current[1]('1');
+      result.current[1]('2');
+      result.current[1]('3');
+      result.current[2].next();
+      result.current[2].next();
+      result.current[2].next();
+      result.current[2].next();
+      result.current[2].next();
+      result.current[2].next();
+    });
+    expect(result.current[0]).toBe('3');
+  });
 });
