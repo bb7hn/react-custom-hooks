@@ -1,0 +1,10 @@
+__tests__
+.git
+.github
+node_modules
+src/
+.gitignore
+.npmignore
+jest.config.js
+package-lock.json
+tsconfig.json
