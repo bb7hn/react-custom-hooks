@@ -4,7 +4,7 @@ import useDebounce from '../src/useDebounce';
 test('should return initial value', () => {
   const { result,rerender } = renderHook(() => useDebounce('test'));
 
-  expect(result.current).toBe('asd');  
+  expect(result.current).toBe('test');  
 });
 
 // Add more test cases as needed
