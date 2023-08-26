@@ -1,6 +1,6 @@
 {
   "name": "r-custom-hooks",
-  "version": "0.1.3",
+  "version": "0.1.1",
   "description": "predefined custom react hooks",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,8 +9,8 @@
     "clean": "rm -rf ./dist",
     "clean-win": "echo y|del \"./dist\"",
     "compile": "npx tsc",
-    "build": "npm run clean && npm run test && git stash && npm run compile && npm version patch && echo ___Compiled successfully___",
-    "build-win": "npm run clean-win && npm run test && npm run compile && echo ___Compiled successfully___"
+    "build": "npm run clean && npm run test && git stash && npm run compile && npm version patch && echo ___Compiled successfully___ && git push",
+    "build-win": "npm run clean-win && npm run test && npm run compile && echo ___Compiled successfully___ && git push"
   },
   "repository": {
     "type": "git",
