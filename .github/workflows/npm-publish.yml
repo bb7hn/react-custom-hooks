@@ -25,5 +25,8 @@ jobs:
       - run: ls -a
       - run: cd ..
       - run: npm publish
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
