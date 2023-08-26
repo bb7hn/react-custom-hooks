@@ -8,3 +8,4 @@ const useUnmount = (callback:()=>(void)) => {
 }
 
 export default useUnmount
+export {useUnmount}
