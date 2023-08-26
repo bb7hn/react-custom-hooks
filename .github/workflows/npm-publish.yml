@@ -17,16 +17,20 @@ jobs:
         with:
           node-version: 16
           registry-url: https://registry.npmjs.org/
-      - run: git config --global user.email "iletisim@batuhanozen.com"
-      - run: git config --global user.name "Batuhan Ozen"
-      - run: npm ci
-      - run: npm run build
-      - run: cd dist
-      - run: ls -a
-      - run: cd ..
-      - run: npm publish
+      - name: Configure Git
+        run: |
+          git config --global user.email "iletisim@batuhanozen.com"
+          git config --global user.name "Batuhan Ozen"
+      - name: Run NPM CI
+        run: npm ci
+      - name: Build Package
+        run: npm run build
       - name: Upload coverage reports to Codecov
         uses: codecov/codecov-action@v3
+      - name: Set NPM registry
+        run: npm config set registry https://registry.npmjs.org/r-custom-hooks
+      - name: Publish to NPM
+        run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
