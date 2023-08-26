@@ -1,7 +1,10 @@
 {
   "name": "r-custom-hooks",
-  "version": "0.1.4",
+  "version": "0.1.6",
   "description": "predefined custom react hooks",
+  "files": [
+    "dist/**"
+  ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
