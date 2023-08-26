@@ -33,6 +33,7 @@ jobs:
       - run: git config --global user.name "Batuhan Ozen"
       - run: npm run build
       - run: ls -a
+      - run: cp -r ./dist/src .
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
