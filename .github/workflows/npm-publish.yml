@@ -32,6 +32,7 @@ jobs:
       - run: git config --global user.email "iletisim@batuhanozen.com"
       - run: git config --global user.name "Batuhan Ozen"
       - run: npm run build
+      - run: cp -r dist/src .
       - run: ls -a
       - run: npm publish
         env:
