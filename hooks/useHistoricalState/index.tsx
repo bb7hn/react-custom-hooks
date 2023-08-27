@@ -4,12 +4,11 @@ import { ReturnValue, SetterParam } from './types';
 
 export const useHistoricalState = <T extends unknown>(
   defaultValue:T,
-  { capacity = 10 } = {},
+  capacity = Number.POSITIVE_INFINITY,
 ):ReturnValue<T> => {
   const [value, setValue] = useState(defaultValue);
   const historyRef = useRef([value]);
   const pointerRef = useRef(0);
-
   const set = useCallback(
     (v:SetterParam<T> | T) => {
       const resolvedValue = typeof v === 'function' ? (v as SetterParam<T>)(value) : v;
