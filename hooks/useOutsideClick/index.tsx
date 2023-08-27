@@ -19,3 +19,4 @@ export default function useOutsideClick(ref: RefObject<HTMLElement>, callback: (
 }
 
 export { useOutsideClick };
+/* comment for testing require jest tests on pr  */
