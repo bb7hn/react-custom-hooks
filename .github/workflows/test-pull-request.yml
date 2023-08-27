@@ -28,7 +28,12 @@ jobs:
       - name: Set up NodeJS
         uses: actions/setup-node@v1
         with:
-          node-version: 14
+          node-version: 16
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "iletisim@batuhanozen.com"
+          git config --global user.name "Batuhan Ozen"
 
       - name: Install all dependencies
         run: npm install
