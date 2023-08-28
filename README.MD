@@ -14,6 +14,7 @@ This package contains predefined ready to use custom `React hooks`
 install package ```npm i r-custom-hooks```
 
 ```ts
+/*test*/
 import { useDebounce } from 'r-custom-hooks'
 
 export default function MyComponent({...props}){
