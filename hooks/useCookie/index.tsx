@@ -1,55 +1,31 @@
-/* eslint-disable @typescript-eslint/prefer-for-of */
-/* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
+import { useState, useCallback } from 'react';
+import Cookies, { CookieAttributes } from 'js-cookie';
 
-import { useState } from 'react';
+type UseCookieReturnType =
+[string | undefined, (newValue:string, options?:CookieAttributes) =>void, ()=>void];
+const useCookie = (name:string, defaultValue:string):UseCookieReturnType => {
+  const [value, setValue] = useState<string | undefined>(() => {
+    const cookie = Cookies.get(name);
+    if (cookie) return cookie;
+    Cookies.set(name, defaultValue);
+    return defaultValue;
+  });
 
-function getCookie(cname:string) {
-  const name = `${cname}=`;
-  const decodedCookie = decodeURIComponent(document.cookie);
-  const ca = decodedCookie.split(';');
-  for (let i = 0; i < ca.length; i += 1) {
-    let c = ca[i];
-    while (c.startsWith(' ')) {
-      c = c.substring(1);
-    }
-    if (c.startsWith(name)) {
-      return c.substring(name.length, c.length);
-    }
-  }
-  return undefined;
-}
-
-function setCookie<T extends unknown>(cname:string, cvalue:T, expDays = 7) {
-  const d = new Date();
-  d.setTime(d.getTime() + (expDays * 24 * 60 * 60 * 1000));
-  const expires = `expires=${d.toUTCString()}`;
-  document.cookie = `${cname}=${JSON.stringify(cvalue)};${expires};path=/`;
-}
-
-export function useCookie<T extends unknown>(name:string, defaultValue:T, expirationDays?:number) {
-  const [cookie, setValue] = useState(
-    () => {
-      const cookieValue = getCookie(name);
-
-      if (cookieValue === undefined) {
-        setCookie(name, expirationDays);
-        return defaultValue;
-      }
-
-      return cookieValue;
+  const updateCookie = useCallback(
+    (newValue:string, options?:CookieAttributes) => {
+      Cookies.set(name, newValue, options);
+      setValue(newValue);
     },
+    [name],
   );
 
-  const updateCookie = (value = getCookie(name) ?? defaultValue, expDays?:number) => {
-    setValue(value);
-    setCookie(name, value, expDays);
-  };
+  const deleteCookie = useCallback(() => {
+    Cookies.remove(name);
+    setValue(undefined);
+  }, [name]);
 
-  const deleteCookie = () => {
-    setCookie(name, '', 0);
-  };
-
-  return [cookie, updateCookie, deleteCookie];
-}
+  return [value, updateCookie, deleteCookie];
+};
 
 export default useCookie;
+export { useCookie };
