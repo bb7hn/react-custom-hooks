@@ -1,11 +1,12 @@
 import {
+  ChangeEvent,
   RefObject, useEffect, useRef,
 } from 'react';
 import { EventType } from './types';
 
 export default function useEventListener(
   eventType:EventType,
-  callback:(e:Event)=>void,
+  callback:(e:Event | ChangeEvent)=>void,
   ref?:RefObject<HTMLElement>,
 ) {
   const callbackRef = useRef(callback);

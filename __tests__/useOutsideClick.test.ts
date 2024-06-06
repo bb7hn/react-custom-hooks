@@ -1,5 +1,5 @@
 import { renderHook, act } from '@testing-library/react';
-import { useOutsideClick } from '../hooks/useOutsideClick';
+import useOutsideClick from '../hooks/useOutsideClick';
 
 describe('Test useOutsideClick', () => {
   it('should call callback', () => {

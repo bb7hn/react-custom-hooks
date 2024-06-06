@@ -1,6 +1,10 @@
-export { default as useCookie } from './hooks/useCookie';
-export { default as useDebounce } from './hooks/useDebounce';
-export { default as useEventListener } from './hooks/useEventListener';
-export { default as useHistoricalState } from './hooks/useHistoricalState';
-export { default as useOutsideClick } from './hooks/useOutsideClick';
-export { default as useUnmount } from './hooks/useUnmount';
+import useCookie from './hooks/useCookie';
+import useDebounce from './hooks/useDebounce';
+import useEventListener from './hooks/useEventListener';
+import useHistoricalState from './hooks/useHistoricalState';
+import useOutsideClick from './hooks/useOutsideClick';
+import useUnmount from './hooks/useUnmount';
+
+export default {
+  useCookie, useDebounce, useEventListener, useHistoricalState, useOutsideClick, useUnmount,
+};

@@ -3,7 +3,7 @@ import Cookies, { CookieAttributes } from 'js-cookie';
 
 type UseCookieReturnType =
 [string | undefined, (newValue:string, options?:CookieAttributes) =>void, ()=>void];
-const useCookie = (name:string, defaultValue:string):UseCookieReturnType => {
+export default function useCookie(name:string, defaultValue:string):UseCookieReturnType {
   const [value, setValue] = useState<string | undefined>(() => {
     const cookie = Cookies.get(name);
     if (cookie) return cookie;
@@ -25,7 +25,4 @@ const useCookie = (name:string, defaultValue:string):UseCookieReturnType => {
   }, [name]);
 
   return [value, updateCookie, deleteCookie];
-};
-
-export default useCookie;
-export { useCookie };
+}

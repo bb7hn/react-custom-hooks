@@ -2,10 +2,10 @@
 import { useCallback, useRef, useState } from 'react';
 import { ReturnValue, SetterParam } from './types';
 
-export const useHistoricalState = <T extends unknown>(
+export default function useHistoricalState <T extends unknown>(
   defaultValue:T,
   capacity = Number.POSITIVE_INFINITY,
-):ReturnValue<T> => {
+):ReturnValue<T> {
   const [value, setValue] = useState(defaultValue);
   const historyRef = useRef([value]);
   const pointerRef = useRef(0);
@@ -81,5 +81,4 @@ export const useHistoricalState = <T extends unknown>(
       go,
     },
   ];
-};
-export default useHistoricalState;
+}
