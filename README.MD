@@ -227,3 +227,27 @@ export default MyComponent;
 ```
 
 </details>
+
+<details>
+  <summary><b><i>useMediaQuery</i></b></summary>
+  <p>This hook is for handling media queries in your application.</p>
+
+```ts
+import React from 'react';
+import { useMediaQuery } from 'r-custom-hooks';
+
+function MyComponent() {
+  const isMobile = useMediaQuery('(max-width: 600px)');
+
+  return (
+    <div>
+      <p>{isMobile ? 'Mobile View' : 'Desktop View'}</p>
+    </div>
+  );
+}
+
+export default MyComponent;
+
+```
+
+</details>
