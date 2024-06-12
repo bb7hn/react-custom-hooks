@@ -11,7 +11,6 @@
     "lint": "npx eslint .",
     "test": "npx jest --coverage",
     "clean": "rm -rf ./dist",
-    "clean-win": "echo y|del \"./dist\"",
     "clean-tests": "rm -rf ./dist/__tests__",
     "clean-clean-tests-win": "echo y|del \"./dist/__tests__\"",
     "compile": "npx tsc",
