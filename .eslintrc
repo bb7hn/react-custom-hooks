@@ -12,5 +12,13 @@
             "src/**/*.ts",
             "src/**/*.tsx"
         ]
+    },
+    "overrides": [
+    {
+        "files": ["types.d.ts"],
+        "rules": {
+            "@typescript-eslint/naming-convention": "off"
+        }
     }
+]
 }

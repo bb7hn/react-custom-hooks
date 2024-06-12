@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unnecessary-type-constraint */
 import { useEffect, useState } from 'react';
 
-const useDebounce = <T extends unknown>(initialValue: T, timeOutInMs = 500): T => {
+export default function useDebounce<T extends unknown>(initialValue: T, timeOutInMs = 500): T {
   const [value, setValue] = useState<T>(initialValue);
 
   useEffect(() => {
@@ -16,6 +16,4 @@ const useDebounce = <T extends unknown>(initialValue: T, timeOutInMs = 500): T =
   }, [initialValue, timeOutInMs]);
 
   return value;
-};
-export default useDebounce;
-export { useDebounce };
+}

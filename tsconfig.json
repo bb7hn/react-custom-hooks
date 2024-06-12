@@ -11,5 +11,5 @@
     "moduleResolution": "node",
     "typeRoots": ["node_modules/@types"]
   },
-  "include": ["hooks/**/*","__tests__/**/*", "index.tsx"],
+  "include": ["hooks/**/*","__tests__/**/*", "index.tsx","types.d.ts"],
 }
